@@ -33,3 +33,6 @@
 /vendor/bundle
 
 /heroku
+
+# Ignore Spring files.
+/spring/*.pid
