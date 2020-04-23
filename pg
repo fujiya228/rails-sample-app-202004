@@ -1,0 +1,32 @@
+#!/bin/bash
+
+postgresPath='/usr/lib/postgresql/11/bin/'
+
+function startPostgres () {
+    exec ${postgresPath}postgres -D /usr/local/pgsql/data
+}
+
+function help() {
+  echo "######################################"
+  echo "# rails tutorial postgres - The Bash Helper #"
+  echo "######################################"
+  echo 
+  echo "Usage: ./pg <action> [arguments...]"
+  echo 
+  echo "Where <action> is one of:"
+  echo ""
+  echo 
+}
+
+action=${1:-"help"}
+echo 'action: '$action
+echo
+
+case "$action" in
+    help)
+        help
+        ;;
+    start)
+        startPostgres
+        ;;
+esac
